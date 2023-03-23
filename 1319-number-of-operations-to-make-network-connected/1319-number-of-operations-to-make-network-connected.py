@@ -9,7 +9,7 @@ class Solution:
             graph[a].append(b)
             graph[b].append(a)
         for i in range(0,n):
-            if(visited[i]==0 ):
+            if not visited[i]:
                 need += 1
                 self.dfs(graph,i,visited)
         return need-1

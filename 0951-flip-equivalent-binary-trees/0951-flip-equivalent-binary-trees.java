@@ -13,33 +13,22 @@
  *     }
  * }
  */
-// 11:55
+// start -11:55
+// first submission - 12:15
+// success - 12:17
 class Solution {
     boolean result = true;
     public boolean flipEquiv(TreeNode root1, TreeNode root2) {
-        dfs(root1,root2);
-        return result;
+        return dfs(root1,root2);
     }
     
-    private void dfs(TreeNode a,TreeNode b){
+    private boolean dfs(TreeNode a,TreeNode b){
         if(a==null&&b==null){
-            result = result && true;
+            return true;
         } else if(a!=null&&b!=null &&a.val==b.val){
-            Integer aLeft = a.left!=null?a.left.val:null;
-            Integer aRight = a.right!=null?a.right.val:null;
-            Integer bLeft = b.left!=null?b.left.val:null;
-            Integer bRight = b.right!=null?b.right.val:null;
-            if(aLeft==bLeft && aRight==bRight){
-                dfs(a.left,b.left);
-                dfs(a.right,b.right);
-            } else if(aLeft==bRight && aRight==bLeft){
-                dfs(a.left,b.right);
-                dfs(a.right,b.left);
-            } else {
-                result = result && false;
-            }
+            return (dfs(a.left,b.left) && dfs(a.right,b.right)) || (dfs(a.left,b.right) && dfs(a.right,b.left));
         } else {
-            result = result && false;
+            return false;
         }
     }
 }

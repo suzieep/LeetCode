@@ -16,6 +16,7 @@
 // start -11:55
 // first submission - 12:15
 // success - 12:17
+// update - 12:32
 class Solution {
     boolean result = true;
     public boolean flipEquiv(TreeNode root1, TreeNode root2) {

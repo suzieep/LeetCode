@@ -1,4 +1,5 @@
 class Solution {
+    
    public int fib(int n) {
         int[] fib = new int[n+2];
         fib[0]=0;

@@ -1,5 +1,6 @@
 //2:55
 //3:28
+//3:44
 class Solution {
 
     public int countSquares(int[][] matrix) {
@@ -9,12 +10,8 @@ class Solution {
                if(matrix[i][j]==1){
                    result += 1;
                    int side = 1;
-                   
-                   while(isSquare(i,j,matrix,side)){
+                   while(isSquare(i,j,matrix,side++)){
                        result +=1;
-                        System.out.println(i+" "+j+" "+side+" "+result);
-
-                       side++;
                    }
                }   
             }
@@ -34,7 +31,6 @@ class Solution {
                 result = false;
             }
         }
-                System.out.println(result);
 
         return result;
     }

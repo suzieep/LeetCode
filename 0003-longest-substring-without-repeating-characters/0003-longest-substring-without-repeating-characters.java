@@ -4,7 +4,6 @@ class Solution {
         List<String> elements = s.isEmpty() ? new ArrayList<>() : new ArrayList<>(Arrays.asList(s.split("")));
         List<String> currentList = new LinkedList<>();
         Set<String> currentSet = new HashSet<>();
-        System.out.println(elements.size());
 
         for (int i = 0; i < elements.size(); i++) {
             String current = elements.get(i);
@@ -13,7 +12,7 @@ class Solution {
             }
             currentSet.add(current);
             currentList.addLast(current);
-        maxCount = Math.max(currentSet.size(), maxCount);
+            maxCount = Math.max(currentSet.size(), maxCount);
         }
         return maxCount;
     }
